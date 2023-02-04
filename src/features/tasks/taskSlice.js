@@ -21,11 +21,12 @@ export const taskSlice = createSlice({
   initialState: initialState,
   reducers: {
     addTask: (state, action) => {
-      return [...state, action.payload]
+      const newTasks = [...state, action.payload];
+      return newTasks;
     },
     deleteTask: (state, action) => {
-      const newTasks = state.filter(task => task.id !== action.payload)
-      return newTasks
+      const newTasks = state.filter(task => task.id !== action.payload);
+      return newTasks;
     }
   }
 })
