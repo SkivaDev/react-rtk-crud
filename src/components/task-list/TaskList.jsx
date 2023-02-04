@@ -16,7 +16,7 @@ function TaskList() {
     <div>
       <header>
         <h1>Total Tasks {tasks.length}</h1>
-        <Link to="/create-task">CREATE NEW TASK</Link>
+        <Link to={"/create-task"}>CREATE NEW TASK</Link>
       </header>
 
       {tasks.map(task => (
@@ -24,6 +24,7 @@ function TaskList() {
           <h3>{task.title}</h3>
           <p>{task.description}</p>
           <button onClick={() => handleDelete(task.id)}>Delete</button>
+          <Link to={`/edit-task/${task.id}`}>EDIT</Link>
         </div>
       ))}
     </div>
